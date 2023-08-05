@@ -1,0 +1,60 @@
+/* body{
+    background-image: url(C:\Users\lugat\OneDrive\Desktop\cr-pi-countries-main\client\src\assets\background-home.png);
+} */
+
+
+.div{
+    /* background-image: url(C:\Users\lugat\OneDrive\Desktop\cr-pi-countries-main\client\src\assets\background-home.png); */
+    background-color: #8ca3cc ;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.filters{
+    display:flex;
+    flex-direction: column;
+    background-color: #3b4796;
+    border: 2px solid #b4586c;
+    /* margin-top: 4em; */
+    /* margin-bottom: -1em; */
+    width: 15em;
+    height: 140em;
+}
+
+.select{
+    margin-top: 5em;
+    display: flex;
+    background-color:  #b4586c ;
+    padding: 0.4em;
+    color:  #ccd8ed ;
+    border-color:  #8ca3cc ;
+    border-width: 0.2em;
+    border-radius: 0.5em;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    width: 15em;
+    height: 3em; 
+    margin-left: 1.5em;
+}
+
+.reset{
+    margin-top: 10em;
+    margin-left: 2.2em;
+    background-color: #b4586c ;
+    /* padding: 0.7em; */
+    color:  #ccd8ed ;
+    border-color:  #8ca3cc ;
+    border-radius: 0.5em; 
+    height: 2em; 
+    width: 10em;
+    font-size:1em;
+    font-weight: 500;
+    cursor: pointer;
+    /* margin-top: 2em; */
+}
+
+
+

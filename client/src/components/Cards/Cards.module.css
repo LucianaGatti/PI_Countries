@@ -1,0 +1,8 @@
+.div{
+    margin-top: -135em;
+    margin-right: 2em;
+    margin-left: 18em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 500px);
+    justify-content: center;	
+}

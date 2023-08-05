@@ -1,0 +1,34 @@
+.div{
+    display:flex;
+    background-color: #3b4796;
+    justify-content: end;
+    margin-right: 5em;
+}
+
+.input{
+    font-size: medium;
+    font-weight: 600;
+    text-align:center;
+    border-color:  #8ca3cc ;
+    border-radius: 0.5em;
+    width: 15em;
+    height: 2.6em;
+}
+
+.search{
+    background-color: #b4586c ;
+    padding: 0.5em;
+    color: aliceblue;
+    border-color:  #8ca3cc ;
+    border-radius: 0.5em;
+    height: 3em;
+    font-size:1em;
+    font-family:sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 1em;
+
+}
+
+
+

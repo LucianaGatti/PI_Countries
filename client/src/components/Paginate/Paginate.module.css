@@ -1,0 +1,84 @@
+.pags {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2em;
+	border-radius: 100%;
+  }
+  
+  .pageList {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0 0.5rem;
+	border-radius: 100%;
+	
+  }
+  
+  .numberPage,
+  .pageBtn {
+	border: none;
+	height: 2rem;
+	width: 2rem;
+	font-size: 0.8rem;
+	font-weight: 800;
+	color:  #3b4796;
+	background-color:  #ea7c79;
+	
+	margin: 0 0.2rem;
+	transition: all 0.2s;
+	border-radius: 100%;
+  }
+  
+  .numberPage:hover,
+  .pageBtn:hover {
+	  cursor: pointer;
+	  background-color: #b4586c ;
+	  border: none;
+	  border-radius: 100%;
+	  transition: all 0.2s
+	
+  
+	}
+  
+  
+  .pageBtn.prev::before {
+	content: "ant";
+  }
+  
+  .pageBtn.next::after {
+	content: "sig";
+  }
+  
+  .match {
+	border: 1px solid #1890ff;
+	border-radius: 3px;
+	height: 2rem;
+	width: 2rem;
+	font-size: 0.8rem;
+	font-weight: 600;
+	color:  #3b4796;
+	background-color:  #ea7c79;
+	margin: 0 0.2rem;
+	transition: all 0.2s;
+	border-radius: 100%;
+	
+  }
+  
+  .match:hover {
+	cursor: pointer;
+	color:  #3b4796;
+	border:1px solid #69b3f8; 
+	border-radius: 3px;
+  }
+  
+  .pageBtn:disabled {
+	background-color: #f5f5f5;
+	color:  #3b4796;
+  }
+  
+  .dots:disabled {	
+	color:  #3b4796;
+	cursor: none
+  }

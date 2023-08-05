@@ -1,0 +1,54 @@
+
+.div{
+    background-image: url(C:\Users\lugat\OneDrive\Desktop\cr-pi-countries-main\client\src\assets\background.png);
+    background-size:cover;
+    height: 55rem;
+    width: 100rem;
+    margin: 0;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+
+}
+
+.travel{
+    display: flex;
+    justify-content: flex-end;
+    color: #3c4796 ;
+    margin-top: 4em;
+    margin-left: 22em;
+    font-size: 4em;
+}
+
+.countries{
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    color: #3c4796 ;
+    font-size: 4em;
+    margin-top: 6em;
+    margin-left: -4.7em;
+
+}
+
+.button{ 
+
+    position: absolute;
+    color: rgb(0, 66, 62);
+    font-weight: 800;
+    cursor: pointer;
+    width: 10em;
+    height: 4em;
+    background:  #eb7c78;
+    border-color:#7190c7 ;
+    color:aliceblue;
+    border-width: 0.2em;
+    /* padding: 0.5em; */
+    margin-top: 45em; 
+    margin-left: -14.2em;
+    border-radius: 0.5em;
+    font-size: 0.8em;
+}
+
+

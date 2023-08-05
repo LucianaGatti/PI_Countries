@@ -1,0 +1,203 @@
+.container {
+    background-color:  #7190c7 ;
+    background-size: cover;
+    height: 50em;
+    display: flex;
+    justify-content: center;
+    padding: 5em;
+}
+
+
+.form {
+    padding: 1em;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 35em;
+    height: 38em;
+    box-shadow: 20px 20px 10px  #b4586c ;
+    background: #ea7c79 ; 
+    border-radius: 2em;
+}
+
+.title {
+    display: flex;
+    margin-top: -0.1em;
+    justify-content: center;
+	font-size: 2em;
+    color: #e8ebf0;
+}
+
+.subtitle {
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    justify-content: start;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #eae2e2;
+    text-align: start;  
+}
+
+/*                                  !inputs                           */
+
+.inputName {
+    display: inline-block;
+    height: 1.2em;
+    width: 12em;
+    background-color:  #7190c7 ;
+    border-radius: 0.5em;
+}
+
+.inputDifficulty {
+    display: inline-block;
+    height: 1.2em;
+    width: 3em;
+    background-color:  #7190c7 ;
+    border-radius: 0.5em;
+}
+
+.inputDuration {
+    display: inline-block;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    height: 1.2em;
+    width: 3em;
+    background-color:  #7190c7 ;
+    border-radius: 0.5em;
+}
+
+  /*                                  !season                           */
+
+.inputSeason{
+    margin-top: 1em;
+    margin-left: 5em;
+}
+
+.labelSpring{
+    margin-left: 1em;
+    color: #eae2e2;
+}
+
+.labelFall{
+    margin-left: 1em;
+    color: #eae2e2;
+}
+
+.labelSummer{
+    margin-left: 0.7em;
+    color: #eae2e2;
+}
+
+.labelWinter{
+    margin-left: 0.8em;
+    color: #eae2e2;
+}
+
+    /*                                  !choose a country                           */
+
+.divChooseCountry {
+    display: flex;
+    /* background-color:  #7190c7 ; */
+    color:  #060606 ;
+    border-color:  #3b4796 ;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    cursor: pointer;
+    width: 20em;
+    height: 2em; 
+    margin-left: 3em;
+}
+
+.divCountry {
+    display: flex;
+    margin-left: 3em;
+}
+
+.idsCountry {
+    cursor: pointer;
+    color: black;
+    background-color: rgba(24, 144, 255, 0.06);
+    text-align: center;
+    font-size: 0.7em;
+    margin-top: 1em;
+    margin-left: 0.3em;
+    margin-bottom: -10em;
+}
+
+    /*                                  !create activity                           */
+
+.submit{
+    display: flex;
+    justify-content: center;
+    
+}
+.btnSubmit {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #3b4796;
+    color: white;
+    border: 1px solid #8ca3cc;
+    padding: 0.7em;
+    border-radius: 0.5em;
+    text-align: center;
+    font-size: 1em;
+    width: 10em;
+    height: 2.5em;
+    margin-top: 5em;
+}
+
+.btnNoSubmit {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #63646d;
+    color: white;
+    border: 1px solid #8ca3cc;
+    padding: 0.7em;
+    border-radius: 0.5em;
+    text-align: center;
+    font-size: 1em;
+    width: 10em;
+    height: 2.5em;
+    margin-top: 5em;
+}
+
+
+
+
+    /*                                  !errors                           */
+
+.errorInputName {
+    height: 1.2em;
+    width: 12em;
+    background-color:  red ;
+    color: rgb(0, 0, 0);
+    border-radius: 0.5em;
+}
+
+.errorInputDifficulty {
+    height: 1.2em;
+    width: 3em;
+    background-color:  red ;
+    color: rgb(0, 0, 0);
+    border-radius: 0.5em;
+}
+
+.errorInputDuration {
+    height: 1.2em;
+    width: 3em;
+    background-color:  red ;
+    color: rgb(0, 0, 0);
+    border-radius: 0.5em;
+}
+
+.errorP {
+    display: inline-block;
+    font-size: 0.9em;
+    color: red;
+    margin-left: 1em;
+}
+
+

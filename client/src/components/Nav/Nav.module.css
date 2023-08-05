@@ -1,0 +1,64 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  background-color: #3b4796;
+  margin: 0;
+  border: 2px solid #b4586c;
+}
+.item {
+  margin: 10px;
+}
+.exit{
+    background-color: #b4586c ;
+    padding: 0.5em;
+    color: aliceblue;
+    border-color:  #8ca3cc ;
+    border-radius: 0.5em;
+    height: 3em;
+    width: 5em;
+    font-size:1em;
+    font-family:sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.home{ 
+    background-color: #b4586c;
+    padding: 0.5em;
+    color: aliceblue;
+    border-color:  #8ca3cc ;
+    border-radius: 0.5em;
+    height: 3em;
+    width: 5em;
+    font-size:1em;
+    font-family:sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .activity{
+    background-color: #b4586c;
+    padding: 0.5em;
+    color: aliceblue;
+    border-color:  #8ca3cc ;
+    border-radius: 0.5em;
+    height: 3em;
+    width: 8em;
+    font-size:1em;
+    font-family:sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+
+
