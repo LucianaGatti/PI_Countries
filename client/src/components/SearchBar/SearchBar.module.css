@@ -9,22 +9,22 @@
     font-size: medium;
     font-weight: 600;
     text-align:center;
-    border-color:  #8ca3cc ;
+    border: 2px solid #b4586c;
     border-radius: 0.5em;
     width: 15em;
     height: 2.6em;
 }
 
 .search{
-    background-color: #b4586c ;
-    padding: 0.5em;
-    color: aliceblue;
-    border-color:  #8ca3cc ;
-    border-radius: 0.5em;
-    height: 3em;
-    font-size:1em;
-    font-family:sans-serif;
-    font-weight: 500;
+    background-image: url("C:/Users/lugat/OneDrive/Desktop/cr-pi-countries-main/client/src/assets/Search.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3.5em;
+    height: 3.5em;
+    background-size: 75%;
+    border-radius: 100%;
+    border: 2px solid #b4586c;
+    border-radius: 100%;
     cursor: pointer;
     margin-left: 1em;
 

@@ -1,21 +1,20 @@
 .div{
   background-color:  #7190c7 ;
   background-size: cover;
-  height: 50em;
+  height: 55em;
   display: flex;
   justify-content: center;
   padding: 2em;
 }
 
 .contain {
-    padding: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-gap: 20px;
     justify-content: center;
     align-items: center;
-    width: 63em;
+    width: 70em;
     box-shadow: 20px 20px 10px  #b4586c ;
     background: #ea7c79 ; 
     border-radius: 2em;
@@ -30,7 +29,7 @@
   }
 
   .name{
-    margin: 0;
+    margin-top: -1em;
     font-size: 2.6em;
     color: #e8ebf0;
     text-align: center;
@@ -45,12 +44,24 @@
   }
 
   .info{
-    margin-top: 1.8em;
+    margin-top: 1em;
     margin-left: 2em;
     display: flex;
     justify-content: start;
     font-size: 1.5em;
     color: #eae2e2;
     text-align: start;  
+  }
+
+  .infoP{
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    font-size: 0.6em;
+    color: #eae2e2;
+  }
+
+  .nameCountry{
+    border-top: 10em;
+    color: #eae2e2;
   }
 

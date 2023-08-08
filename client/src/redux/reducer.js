@@ -61,30 +61,30 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case FILTERED_BY_ACTIVITIES:
-            const allCountries = state.allCountries
+{            const allCountries = state.allCountries
             const filteredbyActivity = action.payload === 'Filter by Activities'
-                ? allCountries : allCountries.filter((c) => {
-                    const activities = c.activities.map((a) => a.name)
+                ? allCountries : allCountries.filter((countries) => {
+                    const activities = countries.activities.map((activity) => activity.name)
                     return activities.includes(action.payload)
                 });
             return {
                 ...state,
                 countries: filteredbyActivity
-            };
+            };}
 
-        case FILTERED_BY_CONTINENT:
+        case FILTERED_BY_CONTINENT:{
             const countriesByContinent = state.allCountries
             const filteredbyContinent = action.payload !== 'All' ?
-                countriesByContinent.filter(c => c.continents.includes(action.payload)) : countriesByContinent;
+                countriesByContinent.filter(countries => countries.continents.includes(action.payload)) : countriesByContinent;
             console.log(state.allCountries)
             console.log(filteredbyContinent)
             return {
                 ...state,
                 countries: filteredbyContinent
             };
-
+        }
         case ORDERED_BY_NAME:
-            const sorted = state.allCountries
+{            const sorted = state.allCountries
             const isAscending = action.payload === "asc";
             const sortedCountries = sorted.sort((a, b) =>
                 isAscending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
@@ -93,9 +93,9 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 countries: sortedCountries
             }
-
+}
         case ORDERED_BY_POPULATION:
-            const countriesPop = state.allCountries;
+{            const countriesPop = state.allCountries;
             console.log(countriesPop)
             const isAscending2 = action.payload === 'asc';
             const sortedByPopulation = countriesPop.sort((a, b) => {
@@ -105,7 +105,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 countries: sortedByPopulation
-            };
+            };}
 
             case CLEAN:
                 if (action.payload === "detail") {

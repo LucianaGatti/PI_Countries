@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   height: 50px;
+  position: fixed;
 }
 
 
@@ -19,44 +20,42 @@
   margin: 10px;
 }
 .exit{
-    background-color: #b4586c ;
-    padding: 0.5em;
-    color: aliceblue;
-    border-color:  #8ca3cc ;
-    border-radius: 0.5em;
-    height: 3em;
-    width: 5em;
-    font-size:1em;
-    font-family:sans-serif;
-    font-weight: 500;
-    cursor: pointer;
+  background-image: url("C:/Users/lugat/OneDrive/Desktop/cr-pi-countries-main/client/src/assets/exit.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 3.5em;
+  height: 3.5em;
+  background-size: 85%;
+  border-radius: 100%;
+  border: 2px solid #b4586c;
+  border-radius: 100%;
+  cursor: pointer;
 }
 
 .home{ 
-    background-color: #b4586c;
-    padding: 0.5em;
-    color: aliceblue;
-    border-color:  #8ca3cc ;
-    border-radius: 0.5em;
-    height: 3em;
-    width: 5em;
-    font-size:1em;
-    font-family:sans-serif;
-    font-weight: 500;
-    cursor: pointer;
+  background-image: url("C:/Users/lugat/OneDrive/Desktop/cr-pi-countries-main/client/src/assets/home.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 3.5em;
+  height: 3.5em;
+  background-size: 90%;
+  scale: 1;
+  border-top: 10em;
+  border: 2px solid #b4586c;
+  border-radius: 100%;
+  cursor: pointer;
   }
 
   .activity{
-    background-color: #b4586c;
-    padding: 0.5em;
-    color: aliceblue;
-    border-color:  #8ca3cc ;
-    border-radius: 0.5em;
-    height: 3em;
-    width: 8em;
-    font-size:1em;
-    font-family:sans-serif;
-    font-weight: 500;
+    background-image: url("C:/Users/lugat/OneDrive/Desktop/cr-pi-countries-main/client/src/assets/activity.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3.5em;
+    height: 3.5em;
+    background-size: 85%;
+    border-radius: 100%;
+    scale: 1;
+    border: 2px solid #b4586c;
     cursor: pointer;
   }
 

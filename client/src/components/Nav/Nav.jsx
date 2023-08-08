@@ -1,4 +1,3 @@
-
 import style from "./Nav.module.css"
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
@@ -10,12 +9,12 @@ const NavBar = () => {
       <ul className={style.list}>
         <li className={style.item}>
           <Link to="/home">
-            <button className={style.home}>Home</button>
+            <button className={style.home}></button>
           </Link>
         </li>
         <li className={style.item}>
           <Link to="activities">
-            <button className={style.activity}>Create activity</button>
+            <button className={style.activity}></button>
           </Link>
         </li>
         <li className={style.item}>
@@ -23,7 +22,7 @@ const NavBar = () => {
         </li>
         <li className={style.item}>
           <Link to="/">
-            <button className={style.exit}>Exit</button>
+            <button className={style.exit}></button>
           </Link>
         </li>
       </ul>

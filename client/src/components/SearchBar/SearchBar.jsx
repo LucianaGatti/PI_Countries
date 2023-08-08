@@ -37,7 +37,7 @@ const SearchBar = (props) => {
         <button 
         className={style.search}
         onClick={(event) => handleBtnChange(event)}
-        type="submit">Search</button>
+        type="submit"></button>
     </nav> 
     </div>
     );
