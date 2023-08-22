@@ -4,7 +4,6 @@ import {
     GET_COUNTRIES_BY_NAME,
     GET_ACTIVITIES,
     POST_ACTIVITIES,
-    DELETE_ACTIVITY,
     FILTERED_BY_ACTIVITIES,
     FILTERED_BY_CONTINENT,
     ORDERED_BY_NAME,
@@ -17,7 +16,6 @@ const initialState = {
     allCountries: [],
     countriesDetail: [],
     activities: [],
-    myFavorites: [],
     filteredCountries: [],
 }
 
@@ -54,12 +52,6 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
             };
 
-        case DELETE_ACTIVITY:
-            return {
-                ...state,
-                activities: state.activities.filter((a) => a.id !== action.payload)
-            };
-
         case FILTERED_BY_ACTIVITIES:
 {            const allCountries = state.allCountries
             const filteredbyActivity = action.payload === 'Filter by Activities'
@@ -76,8 +68,6 @@ const rootReducer = (state = initialState, action) => {
             const countriesByContinent = state.allCountries
             const filteredbyContinent = action.payload !== 'All' ?
                 countriesByContinent.filter(countries => countries.continents.includes(action.payload)) : countriesByContinent;
-            console.log(state.allCountries)
-            console.log(filteredbyContinent)
             return {
                 ...state,
                 countries: filteredbyContinent

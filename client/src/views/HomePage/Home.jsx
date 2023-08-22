@@ -26,10 +26,10 @@ const Home = () => {
     //const [isLoading, setIsLoading] = useState(false);
 
     const [filters, setFilters] = useState({ //creamos un estado local para almacenar los filtros
-        orderBy: 'All', //con el all en todos los campos queremos decir que no hay criterios de filtros aplicados.
-        orderByPop: 'All',
-        filter: 'All',
-        filterBy: 'All',
+        orderBy: "All", //con el all en todos los campos queremos decir que no hay criterios de filtros aplicados.
+        orderByPop: "All",
+        filter: "All",
+        filterBy: "All",
     });
 
 
@@ -37,11 +37,11 @@ const Home = () => {
     
     //! Filtrar por actividad
         .filter(country => {
-            if (filters.filter !== 'All') {
+            if (filters.filter !== "All") {
                 return country.Activities.some(activity => activity.name === filters.filter);
             }
-            // Filtrar por continente
-            if (filters.filterBy !== 'All') {
+            //! Filtrar por continente
+            if (filters.filterBy !== "All") {
                 return country.continents === filters.filterBy;
             }
             return true; // Si no se seleccionó ningún filtro, mostrar todos los países
@@ -49,12 +49,12 @@ const Home = () => {
 
         .sort((a, b) => {
             // Ordenar por población
-            if (filters.orderByPop === 'asc') {
+            if (filters.orderByPop === "asc") {
                 if (a.population < b.population) return 1;
                 if (a.population > b.population) return -1;
                 // Si tienen la misma población, comparar por nombre
                 return a.name.localeCompare(b.name);
-            } else if (filters.orderByPop === 'des') {
+            } else if (filters.orderByPop === "des") {
                 if (a.population > b.population) return 1;
                 if (a.population < b.population) return -1;
                 // Si tienen la misma población, comparar por nombre
@@ -62,9 +62,9 @@ const Home = () => {
             }
 
             // Ordenar por nombre
-            if (filters.orderBy === 'asc') {
+            if (filters.orderBy === "asc") {
                 return a.name.localeCompare(b.name);
-            } else if (filters.orderBy === 'des') {
+            } else if (filters.orderBy === "des") {
                 return b.name.localeCompare(a.name);
             } else {
                 return 0; // Si no se seleccionó ningún ordenamiento por nombre, no cambiar el orden de los países
@@ -84,13 +84,10 @@ const Home = () => {
     };
 
 
-
     const handleFilterByActivities = (e) => {
-        //setIsLoading(true);
         e.preventDefault();
         setCurrentPage(1);
         setFilters({ ...filters, filter: e.target.value });
-        //setIsLoading(false);
     };
 
     const handleFilterByContinent = (e) => {
@@ -102,10 +99,10 @@ const Home = () => {
 
     const handleAllCountries = () => {
         setFilters({
-            orderBy: 'All',
-            orderByPop: 'All',
-            filter: 'All',
-            filterBy: 'All',
+            orderBy: "All",
+            orderByPop: "All",
+            filter: "All",
+            filterBy: "All",
 
         })
         dispatch(getAllCountries());
@@ -113,7 +110,7 @@ const Home = () => {
 
     };
 
-    //!PAGINATION. 
+    //!PAGINATE. 
     //el valor inicial de currentPage es 1, ya que es la primer pagina.
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -126,9 +123,9 @@ const Home = () => {
     */
     const indexLastCountry = currentPage * countriesPerPage;
 
-        /*indexLastCountry guarda el indice del primer pais que se muestra en la pagina actual
+        /*indexFirstCountry guarda el indice del primer pais que se muestra en la pagina actual
     se calcula restando al indice del ultimo pais, el numero de paises por página.
-    ejemplo, estamos en la pagina 2, el indice del primer pais sería 10. 20-10
+    ejemplo, estamos en la pagina 2, el indice del primer pais sería 10. 
 
     hay que tener en cuenta que el primer país de la primer página tiene indice 0.
     */
@@ -160,7 +157,7 @@ const Home = () => {
         //guardamos el valor de la pagina actual - 1, para saber si hay paginas anteriores.
         const prevPage = currentPage - 1;
         //si prevPage es menor que cero significa que no hay paginas anteriores a la actual.
-        if (prevPage < 0) return;
+        if (prevPage <= 0) return;
         //si hay anteriores, usamos setCurrentPage para actualizar la pagina actual con el valor de prevPage, que sería la anterior.
         setCurrentPage(prevPage);
     }
@@ -169,7 +166,6 @@ const Home = () => {
         //al dar clic se actualiza la pagina actual con el valor de pageNumber
         setCurrentPage(pageNumber);
     };
-    //!PAGINATION. 
 
 
 
@@ -200,12 +196,12 @@ const Home = () => {
                 <select className={style.select}  name="Order by population" id='Order by population' value={filters.orderByPop} onChange={(e) => handleOrderByPopulation(e)}>
                     <option value="All">Order by Population</option>
                     <option value='asc'>+ / -</option>
-                    <option value='des'>- / A</option>
+                    <option value='des'>- / +</option>
                 </select>
 
                                             {/*  FILTRO POR ACTIVIDADES.  */}
                 <select className={style.select} name="Filter by Activities" id='Filter by Activities' value={filters.filter} onChange={(e) => handleFilterByActivities(e)}>
-                    <option value="All">Activities</option>
+                    <option value="All">Filter by Activities</option>
                     {activities.map((a) => (
                         <option value={a.name} key={a.id}>{a.name}</option>
                     ))}

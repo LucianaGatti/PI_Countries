@@ -17,6 +17,7 @@ const SearchBar = (props) => {
     const handleBtnChange = (event) => {
         event.preventDefault();
         dispatch(getCountriesByName(name))
+
         setName("");
     }
 

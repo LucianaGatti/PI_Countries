@@ -1,4 +1,4 @@
-import { Clean, getCountriesById } from "../../redux/actions";
+import { getCountriesById } from "../../redux/actions";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -8,18 +8,13 @@ const Detail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const detailCountry = useSelector((state) => {
-                 console.log("myCountry:", state.countriesDetail); 
-
         return state.countriesDetail;
     });
     
 
     useEffect(() => {
-        console.log(id)
+        // console.log(id)
         dispatch(getCountriesById(id));
-        return () => {
-            dispatch(Clean("detail"))
-        }
     }, [dispatch, id]);
 
 
@@ -37,15 +32,12 @@ const Detail = () => {
                     <h2 className={style.info}>Population: <p className={style.infoP}>{detailCountry.population}</p></h2> 
                     <h2 className={style.info}>Activities: {detailCountry.Activities.length > 0 ?
     <div>
-
         {detailCountry.Activities.map(Activities => (
                     <p className={style.infoP} key={Activities.id}>{Activities.name}</p>
         ))}
     </div>
     : <p>No activities found</p>
 }</h2>
-
-
                 </div>
                    <img className={style.flag} src={detailCountry.flags} /> 
         </div>

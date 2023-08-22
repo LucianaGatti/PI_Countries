@@ -6,9 +6,9 @@ const deleteActivities = async (req, res) => {
         await Activity.destroy({
             where: { id }
         });
-        res.status(200).send("Actividad eliminada") // si todo sale bien, respondemos con el string
+        res.status(200).send("activity deleted successfully") // si todo sale bien, respondemos con el string diciendo que se pudo eliminar
     } catch (error) {
-        return res.status(500).json({error: "Error al eliminar la actividad"});
+        return res.status(500).json({error: "could not delete activity"}); //si sale mal tambien respondemos 
     }
 }
 

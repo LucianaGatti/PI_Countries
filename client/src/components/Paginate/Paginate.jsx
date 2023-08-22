@@ -79,7 +79,7 @@ const Paginate = ({ paginated, allCountries, countriesPerPage, currentPage, prev
                         </button>
                     ))}
                 </ul>
-                <button disabled={currentPage === pageNumbers[pageNumbers.length - 1]} className={`${style.pageBtn} ${style.next}`} onClick={() => nextHandler()}></button>
+                <button className={`${style.pageBtn} ${style.next}`} onClick={() => nextHandler()}></button>
             </div>
         </nav>
     );

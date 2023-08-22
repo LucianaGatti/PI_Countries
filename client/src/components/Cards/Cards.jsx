@@ -6,13 +6,13 @@ const Cards = ({ currentCountry }) => {
   return (
     <div>
         <div className={style.div}>
-            {currentCountry.map((c) => (
-            <div key={c.id}>
-                <Card
-                    name={c.name}
-                    flag={c.flags}
-                    continents={c.continents}
-                    id={c.id}
+            {currentCountry.map((country) => (
+              <div key={country.id}>
+              <Card
+                    name={country.name}
+                    flag={country.flags}
+                    continents={country.continents}
+                    id={country.id}
                 />
             </div>
             ))}

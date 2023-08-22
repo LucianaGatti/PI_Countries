@@ -8,14 +8,14 @@ const url = "http://localhost:5000/countries";
 
 const createDB = async () => {
     await axios.get(url)
-      .then(resultado => {
-          console.log(typeof resultado);
+      .then(response => {
+          // console.log(typeof response);
           // El resultado se lee con .data
-          resultado.data.forEach( country => {
-          console.log(country);
+          response.data.forEach( country => {
+          // console.log(country);
           // Se hace Destructuring de los datos necesarios y llenamos todos los campos con sus condicionales
           const { name: { common }, flags: {svg}, cca3, continents, capital, subregion, area, population} = country;
-          let countryActual = {
+          let currentCountry = {
             name: common,
             flags: svg ? svg : "Dont have flag",
             id: cca3,
@@ -25,8 +25,8 @@ const createDB = async () => {
             area: area ? area : 0,
             population: parseInt(population),
           }
-        //   console.log(countryActual); //Logea el Pais actual.
-          // console.log(countryActual.flag ? "Si hay bandera" : "No hay bandera");
+        //   console.log(currentCountry); //Logea el Pais actual.
+          // console.log(currentCountry.flag ? "Si hay bandera" : "No hay bandera");
           Country.findOrCreate({where: countryActual});
         }
       )
@@ -45,4 +45,6 @@ server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 })
 })
-.catch(error => console.error(error))
+.catch(error => {
+  res.status(500).send("An error has occurred on the server");
+})

@@ -6,7 +6,6 @@ import {
     GET_ACTIVITIES,
     FILTERED_BY_ACTIVITIES,
     POST_ACTIVITIES,
-    DELETE_ACTIVITY,
     FILTERED_BY_CONTINENT,
     ORDERED_BY_NAME,
     ORDERED_BY_POPULATION,
@@ -52,7 +51,6 @@ export const getCountriesById = (id) => {
 }
 
 export const orderByPopulation = (order) => {
-    console.log(order)
     return { type: ORDERED_BY_POPULATION, payload: order }
 }
 
@@ -61,16 +59,13 @@ export const orderByName = (order) => {
 }
 
 export const filterByContinent = (payload) => {
-    console.log('filterByContinent', payload);
     return { type: FILTERED_BY_CONTINENT, payload: payload }
 }
 
 export const filterByActivities = (activities) => {
-    console.log(activities)
     return { type: FILTERED_BY_ACTIVITIES, payload: activities }
 }
 
-//la agrego para tener alguna más
 export const getAllActivities = () => {
     return async function (dispatch) {
         try {
@@ -98,21 +93,6 @@ export function postActivity(payload) {
         }
     };
 }
-
-export function deleteActivity(id) {
-    return async function (dispatch) {
-        try {
-            const activity = await axios.delete(`http://localhost:3001/activity/${id}`)
-            return dispatch({
-                type: DELETE_ACTIVITY,
-                payload: activity,
-            });
-        } catch (error) {
-            alert(error)
-        }
-    };
-}
-
 export const Clean = (payload) => {
     return {
         type: CLEAN,

@@ -12,12 +12,12 @@
 }
 
 .filters{
+
     display:flex;
     flex-direction: column;
-    background-color: #3b4796;
-    border: 2px solid #b4586c;
     width: 15em;
-    height: 140em;
+    border-radius: 3em;
+
 }
 
 .select{
@@ -26,8 +26,8 @@
     background-color:  #b4586c ;
     padding: 0.4em;
     color:  #ccd8ed ;
-    border-color:  #8ca3cc ;
-    border-width: 0.2em;
+    border-color:  #3b4796 ;
+    border-width: 0.3em;
     border-radius: 0.5em;
     font-size: 0.8em;
     font-family: sans-serif;
@@ -44,14 +44,14 @@
     margin-left: 2.2em;
     background-color: #b4586c ;
     color:  #ccd8ed ;
-    border-color:  #8ca3cc ;
+    border-color:  #3b4796 ;
+    border-width: 0.3em;
     border-radius: 0.5em; 
     height: 2em; 
     width: 10em;
     font-size:1em;
     font-weight: 500;
     cursor: pointer;
-    /* margin-top: 2em; */
 }
 
 

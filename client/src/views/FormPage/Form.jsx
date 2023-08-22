@@ -1,12 +1,9 @@
 import style from './Form.module.css';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllCountries, postActivity } from '../../redux/actions';
-
-
-
 
 export default function Form() {
     const dispatch = useDispatch();
@@ -14,31 +11,29 @@ export default function Form() {
     const activities = useSelector(state => state.activities);
     const countriesNames = countries.map(country => { return { label: country.name, value: country.id } })
     const navigate = useNavigate();
-    console.log(activities)
-
-
+    // console.log(activities)
 
     useEffect(() => {
         dispatch(getAllCountries());
     }, [dispatch]);
 
     const [input, setInputData] = useState({
-        name: '',
-        difficulty: '',
-        duration: '',
-        season: '',
+        name: "",
+        difficulty: "",
+        duration: "",
+        season: "",
         countryId: [],
     })
 
     const [errors, setErrors] = useState({
-        name: '',
-        difficulty: '',
-        duration: '',
-        season: '',
+        name: "",
+        difficulty: "",
+        duration: "",
+        season: "",
     })
 
-    //const [file, setFile] = useState();
-
+// Esta función maneja los cambios en los inputs del formulario y actualiza el estado
+// y los errores.
     const handleInputChange = ((e) => {
         setInputData({
             ...input,
@@ -50,15 +45,8 @@ export default function Form() {
         }))
     }
     )
-
-    /* const handleInputChecked = ((e) => {
-        if (e.target.checked)
-            setInputData({
-                ...input,
-                season: e.target.value
-            })
-    }) */
-
+// Esta función maneja los cambios en los selects del formulario
+// y actualiza el estado.
     const handleSelect = ((e) => {
         setInputData({
             ...input,
@@ -66,16 +54,10 @@ export default function Form() {
         })
     });
 
-    /* const handleChangeFile = ((e) => {
-        setFile(e.target.files[0])
-    }) */
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (input.name && input.difficulty && input.season && input.countryId.length) {
             dispatch(postActivity(input));
-            //axios.post("http://localhost:3001/activities", input)
-            //     .then(res => alert(res.data))
-            //     .catch(err => alert(err))
             dispatch(getAllCountries())
             try {
                 await dispatch(getAllCountries()); // espera a que se complete getAllCountries
@@ -85,21 +67,21 @@ export default function Form() {
                     duration: 0,
                     season: "",
                     countryId: [],
-                    image: ''
                 });
-                navigate('/home');
+                alert("activity created successfully");
+                navigate("/home");
             } catch (error) {
-                console.log(error);
+                alert(error);
             }
         } else {
             e.preventDefault()
         }
     }
-    const handleDelete = ((e, d) => {
+    const handleDelete = ((e, id) => {
         e.preventDefault();
         setInputData({
             ...input,
-            countryId: input.countryId.filter((country) => country !== d),
+            countryId: input.countryId.filter((country) => country !== id),
         })
     });
     
@@ -131,8 +113,6 @@ export default function Form() {
         return errors;
     }
 
-
-
     return (
         <div className={style.container}>
             <form className={style.form} onSubmit={(e) => handleSubmit(e)}>
@@ -144,9 +124,9 @@ export default function Form() {
                 <div>
                     <label className={style.subtitle}>Name</label>
                     <input
-                        type='text'
+                        type="text"
                         value={input.name}
-                        name='name'
+                        name="name"
                         onChange={(e) => handleInputChange(e)}
                         className={errors.name ? style.errorInputName : style.inputName}
                     />
@@ -157,7 +137,7 @@ export default function Form() {
                 <div>
                     <label className={style.subtitle}>Difficulty</label>
                     <input
-                        type='number' min='1' max='5' value={input.difficulty} name='difficulty'
+                        type="number" min="1" max="5" value={input.difficulty} name="difficulty"
                         onChange={(e) => handleInputChange(e)}
                         className={errors.difficulty ? style.errorInputDifficulty : style.inputDifficulty}
                     />
@@ -169,9 +149,9 @@ export default function Form() {
                 <div>
                     <label className={style.subtitle}>Duration</label>
                     <input
-                        type='number'
+                        type="number"
                         value={input.duration}
-                        name='duration'
+                        name="duration"
                         onChange={(e) => handleInputChange(e)}
                         className={errors.duration ? style.errorInputDuration : style.inputDuration}
                     />
@@ -181,23 +161,23 @@ export default function Form() {
                 <div>
                 <label className={style.subtitle}>Season</label>
                     <div>
-                        <input className={style.inputSeason} type="radio" id='spring' name='season' value='spring' onChange={(e) => handleInputChange(e)} />
-                        <label className={style.labelSpring} htmlFor='spring'>Spring</label>
+                        <input className={style.inputSeason} type="radio" id="spring" name="season" value="spring" onChange={(e) => handleInputChange(e)} />
+                        <label className={style.labelSpring} htmlFor="spring">Spring</label>
                     </div>
 
                     <div className={style.sumerInput}>
-                        <input className={style.inputSeason} type="radio" id='summer' name='season' value='summer' onChange={(e) => handleInputChange(e)} />
-                        <label className={style.labelSummer} htmlFor='summer'> Summer</label>
+                        <input className={style.inputSeason} type="radio" id="summer" name="season" value="summer" onChange={(e) => handleInputChange(e)} />
+                        <label className={style.labelSummer} htmlFor="summer"> Summer</label>
                     </div>
 
                     <div className={style.fallInput}>
-                        <input className={style.inputSeason} type="radio" id='fall' name='season' value='fall' onChange={(e) => handleInputChange(e)} />
-                        <label className={style.labelFall} htmlFor='fall'>Fall</label>
+                        <input className={style.inputSeason} type="radio" id="fall" name="season" value="fall" onChange={(e) => handleInputChange(e)} />
+                        <label className={style.labelFall} htmlFor="fall">Fall</label>
                     </div>
 
                     <div className={style.winterInput}>
-                        <input className={style.inputSeason} type="radio" id='winter' name='season' value='winter' onChange={(e) => handleInputChange(e)} />
-                        <label className={style.labelWinter} htmlFor='winter'>Winter</label>
+                        <input className={style.inputSeason} type="radio" id="winter" name="season" value="winter" onChange={(e) => handleInputChange(e)} />
+                        <label className={style.labelWinter} htmlFor="winter">Winter</label>
                     </div>
 
                     {<p className={style.errorP}>{errors.season ? errors.season : null}</p>}
@@ -206,7 +186,7 @@ export default function Form() {
                                     {/* DIV CHOOSE A COUNTRY */}
 
                 <div>
-                    <select className={style.divChooseCountry} value='countryId' onChange={(e) => handleSelect(e)}>
+                    <select className={style.divChooseCountry} value="countryId" onChange={(e) => handleSelect(e)}>
                         <option selected>Choose a Country</option>
                         {countriesNames.sort((a, b) => a.label.localeCompare(b.label)).map(country => {
                             return <option key={country.value} value={country.value}>{country.label}</option>
@@ -215,7 +195,8 @@ export default function Form() {
 
                 </div>
                 <div className={style.divCountry}>
-                    {input.countryId.filter((c, index, arr) => arr.indexOf(c) === index).map((c, index) => ( //filtro y hago un indexOf para que solo pueda coincidir 1 vez con el país que busco
+                    {/* filtro y hago un indexOf para que solo pueda coincidir 1 vez con el país que busco */}
+                    {input.countryId.filter((c, index, arr) => arr.indexOf(c) === index).map((c, index) => ( 
                         <div key={index}>
                             <button className={style.idsCountry} onClick={(e) => handleDelete(e, c)}>{c} X</button>
                         </div>
@@ -225,8 +206,8 @@ export default function Form() {
                                         {/* DIV CREATE ACTIVITY */}
                     <div className={style.submit}>
                 {Object.keys(errors).length ?
-                    <button className={style.btnNoSubmit} type='submit' disabled>Create Activity</button> :
-                    <button className={style.btnSubmit} type='submit'> Create Activity</button>}
+                    <button className={style.btnNoSubmit} type="submit" disabled>Create Activity</button> :
+                    <button className={style.btnSubmit} type="submit"> Create Activity</button>}
                     </div>
                 
             </form>
